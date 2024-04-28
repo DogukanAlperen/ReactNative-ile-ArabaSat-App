@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {View, Text, StyleSheet ,TextInput,Pressable, Image} from 'react-native'; 
 import Loading from '../components/Loading';
 
-const Login = ()=> {
+const Login = ({navigation})=> {
 
   const [email,setEmail] = useState("")
   const [password,setPaswoord] = useState("")
@@ -50,6 +50,18 @@ return(
 
 
     </Pressable>
+    <Pressable 
+      onPress={()=>navigation.navigate(Register) }
+      
+      style={({pressed})=>[{
+        backgroundColor: pressed ? "gray" : 'blue',
+        marginTop:50,}
+        ,styles.kayıtolbuton]}>
+
+      <Text style={styles.Text}>Kayıt Ol</Text>
+
+
+    </Pressable>
    
       {isLoading ? <Loading Loadingkapat={()=>setisLoading(false)} />:null}
 
@@ -84,7 +96,7 @@ const styles = StyleSheet.create({
   },
   buton:{
     
-    width:'30%',
+    width:'50%',
     height:50,
     borderRadius:10,
     alignItems:'center',
@@ -96,7 +108,7 @@ const styles = StyleSheet.create({
   butonText:{
     
     fontWeight:'bold',
-    color:'white'
+    color:'white',
 
 
   },
@@ -104,6 +116,14 @@ const styles = StyleSheet.create({
     width:100,
     height:100,
     
+  },
+  kayıtolbuton:{
+    width:'30%',
+    height:50,
+    borderRadius:10,
+    alignItems:'center',
+    fontWeight:'bold',
+    justifyContent:'center',
+
   }
-  
 })
