@@ -3,6 +3,7 @@ import React from 'react'
 import {NavigationContainer} from '@react-navigation/native';
 import accessibleNavigator from './accessibleNavigator';
 import usersNavigator from './usersNavigator';
+import app from '../../../../firebaseConfig'
 
 
 const anaNavigator = () => {
